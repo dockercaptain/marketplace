@@ -1,0 +1,50 @@
+apiVersion: v1
+entries:
+  postgresql-ha:
+  - annotations:
+      category: Database
+      images: |
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:12-debian-12-r19
+        - name: pgpool
+          image: docker.io/bitnami/pgpool:4.5.1-debian-12-r3
+        - name: postgres-exporter
+          image: docker.io/bitnami/postgres-exporter:0.15.0-debian-12-r17
+        - name: postgresql-repmgr
+          image: docker.io/bitnami/postgresql-repmgr:16.2.0-debian-12-r13
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 16.2.0
+    created: "2024-07-22T17:33:13.575818573+05:30"
+    dependencies:
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: This PostgreSQL cluster solution includes the PostgreSQL replication
+      manager, an open-source tool for managing replication and failover on PostgreSQL
+      clusters.
+    digest: 507730af74308a2d5af48a16acd65ecff25d71aaf83f82e3bbeb92091f7a68c1
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-220x234.png
+    keywords:
+    - postgresql
+    - repmgr
+    - pgpool
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    - high availability
+    maintainers:
+    - name: VMware, Inc.
+      url: https://github.com/bitnami/charts
+    name: postgresql-ha
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/postgresql-ha
+    urls:
+    - postgresql-ha-14.0.7.tgz
+    version: 14.0.7
+generated: "2024-07-22T17:33:13.572995999+05:30"
