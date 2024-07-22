@@ -15,7 +15,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 3.7.1
-    created: "2024-07-22T19:00:59.291807075+05:30"
+    created: "2024-07-22T19:04:38.542824783+05:30"
     dependencies:
     - condition: zookeeper.enabled
       name: zookeeper
@@ -29,7 +29,7 @@ entries:
     description: Apache Kafka is a distributed streaming platform designed to build
       real-time pipelines and can be used as a message broker or as a replacement
       for a log aggregation solution for big data applications.
-    digest: f5d9d4ceab9978b0f8271f85d3031d0d839b3752e21d0dad53301adb524b6e57
+    digest: f78228bb2771840461cae55a8753e3df97fc484393b7fc21527c0f0eda3a3bd5
     home: https://bitnami.com
     icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
     keywords:
@@ -61,7 +61,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 3.7.0
-    created: "2024-07-22T19:00:59.296188608+05:30"
+    created: "2024-07-22T19:04:38.548155924+05:30"
     dependencies:
     - condition: zookeeper.enabled
       name: zookeeper
@@ -75,7 +75,7 @@ entries:
     description: Apache Kafka is a distributed streaming platform designed to build
       real-time pipelines and can be used as a message broker or as a replacement
       for a log aggregation solution for big data applications.
-    digest: a1066644859d3ac1ac91bb297706a44c4f7917b7fcc628c3fc345d1cded9318f
+    digest: 5cf32dc5e026dd5baa7e35387cbd0c22eddd47da558717d0f6941c0323d4917b
     home: https://bitnami.com
     icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
     keywords:
@@ -108,7 +108,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 16.2.0
-    created: "2024-07-22T19:00:59.302169978+05:30"
+    created: "2024-07-22T19:04:38.554043673+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -154,7 +154,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 15.4.0
-    created: "2024-07-22T19:00:59.299180366+05:30"
+    created: "2024-07-22T19:04:38.550685309+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -186,4 +186,4 @@ entries:
     urls:
     - postgresql-ha-11.9.4.tgz
     version: 11.9.4
-generated: "2024-07-22T19:00:59.28666538+05:30"
+generated: "2024-07-22T19:04:38.537359843+05:30"
