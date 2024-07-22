@@ -1,5 +1,98 @@
 apiVersion: v1
 entries:
+  kafka:
+  - annotations:
+      category: Infrastructure
+      images: |
+        - name: jmx-exporter
+          image: docker.io/bitnami/jmx-exporter:1.0.1-debian-12-r2
+        - name: kafka
+          image: docker.io/bitnami/kafka:3.7.1-debian-12-r2
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.30.3-debian-12-r0
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:12-debian-12-r25
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 3.7.1
+    created: "2024-07-22T19:00:59.291807075+05:30"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 13.x.x
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Kafka is a distributed streaming platform designed to build
+      real-time pipelines and can be used as a message broker or as a replacement
+      for a log aggregation solution for big data applications.
+    digest: f5d9d4ceab9978b0f8271f85d3031d0d839b3752e21d0dad53301adb524b6e57
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
+    keywords:
+    - kafka
+    - zookeeper
+    - streaming
+    - producer
+    - consumer
+    maintainers:
+    - name: Broadcom, Inc. All Rights Reserved.
+      url: https://github.com/bitnami/charts
+    name: kafka
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/kafka
+    urls:
+    - kafka-29.3.10.tgz
+    version: 29.3.10
+  - annotations:
+      category: Infrastructure
+      images: |
+        - name: jmx-exporter
+          image: docker.io/bitnami/jmx-exporter:1.0.1-debian-12-r1
+        - name: kafka
+          image: docker.io/bitnami/kafka:3.7.0-debian-12-r7
+        - name: kubectl
+          image: docker.io/bitnami/kubectl:1.30.2-debian-12-r0
+        - name: os-shell
+          image: docker.io/bitnami/os-shell:12-debian-12-r22
+      licenses: Apache-2.0
+    apiVersion: v2
+    appVersion: 3.7.0
+    created: "2024-07-22T19:00:59.296188608+05:30"
+    dependencies:
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 13.x.x
+    - name: common
+      repository: oci://registry-1.docker.io/bitnamicharts
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: Apache Kafka is a distributed streaming platform designed to build
+      real-time pipelines and can be used as a message broker or as a replacement
+      for a log aggregation solution for big data applications.
+    digest: a1066644859d3ac1ac91bb297706a44c4f7917b7fcc628c3fc345d1cded9318f
+    home: https://bitnami.com
+    icon: https://bitnami.com/assets/stacks/kafka/img/kafka-stack-220x234.png
+    keywords:
+    - kafka
+    - zookeeper
+    - streaming
+    - producer
+    - consumer
+    maintainers:
+    - name: Broadcom, Inc. All Rights Reserved.
+      url: https://github.com/bitnami/charts
+    name: kafka
+    sources:
+    - https://github.com/bitnami/charts/tree/main/bitnami/kafka
+    urls:
+    - kafka-29.3.4.tgz
+    version: 29.3.4
   postgresql-ha:
   - annotations:
       category: Database
@@ -15,7 +108,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 16.2.0
-    created: "2024-07-22T18:56:17.097636309+05:30"
+    created: "2024-07-22T19:00:59.302169978+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -61,7 +154,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 15.4.0
-    created: "2024-07-22T18:56:17.093907124+05:30"
+    created: "2024-07-22T19:00:59.299180366+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -93,4 +186,4 @@ entries:
     urls:
     - postgresql-ha-11.9.4.tgz
     version: 11.9.4
-generated: "2024-07-22T18:56:17.090906884+05:30"
+generated: "2024-07-22T19:00:59.28666538+05:30"
