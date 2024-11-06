@@ -15,7 +15,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 3.7.1
-    created: "2024-07-22T19:04:38.542824783+05:30"
+    created: "2024-11-06T17:55:04.706227497+05:30"
     dependencies:
     - condition: zookeeper.enabled
       name: zookeeper
@@ -45,7 +45,7 @@ entries:
     sources:
     - https://github.com/bitnami/charts/tree/main/bitnami/kafka
     urls:
-    - kafka-29.3.10.tgz
+    - https://dockercaptain.github.io/marketplace-helm/kafka-29.3.10.tgz
     version: 29.3.10
   - annotations:
       category: Infrastructure
@@ -61,7 +61,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 3.7.0
-    created: "2024-07-22T19:04:38.548155924+05:30"
+    created: "2024-11-06T17:55:04.712906769+05:30"
     dependencies:
     - condition: zookeeper.enabled
       name: zookeeper
@@ -91,7 +91,7 @@ entries:
     sources:
     - https://github.com/bitnami/charts/tree/main/bitnami/kafka
     urls:
-    - kafka-29.3.4.tgz
+    - https://dockercaptain.github.io/marketplace-helm/kafka-29.3.4.tgz
     version: 29.3.4
   postgresql-ha:
   - annotations:
@@ -108,7 +108,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 16.2.0
-    created: "2024-07-22T19:04:38.554043673+05:30"
+    created: "2024-11-06T17:55:04.724295915+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -138,7 +138,7 @@ entries:
     sources:
     - https://github.com/bitnami/charts/tree/main/bitnami/postgresql-ha
     urls:
-    - postgresql-ha-14.0.7.tgz
+    - https://dockercaptain.github.io/marketplace-helm/postgresql-ha-14.0.7.tgz
     version: 14.0.7
   - annotations:
       category: Database
@@ -154,7 +154,7 @@ entries:
       licenses: Apache-2.0
     apiVersion: v2
     appVersion: 15.4.0
-    created: "2024-07-22T19:04:38.550685309+05:30"
+    created: "2024-11-06T17:55:04.719883617+05:30"
     dependencies:
     - name: common
       repository: oci://registry-1.docker.io/bitnamicharts
@@ -184,6 +184,118 @@ entries:
     sources:
     - https://github.com/bitnami/charts/tree/main/bitnami/postgresql-ha
     urls:
-    - postgresql-ha-11.9.4.tgz
+    - https://dockercaptain.github.io/marketplace-helm/postgresql-ha-11.9.4.tgz
     version: 11.9.4
-generated: "2024-07-22T19:04:38.537359843+05:30"
+  sonarqube:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Update Chart's version to 10.7.0"
+        - kind: changed
+          description: "Upgrade SonarQube to 10.7.0"
+        - kind: changed
+          description: "Support Kubernetes v1.30"
+        - kind: changed
+          description: "Upgrade ingress-nginx dependency to 4.10.1"
+        - kind: changed
+          description: "Deprecate `jdbcOverwrite.enable` in favor of `jdbcOverwrite.enabled`"
+        - kind: fixed
+          description: "Fix regression on env valuesFrom in the new STS template"
+        - kind: fixed
+          description: "Fix a typo in the new common STS template"
+        - kind: changed
+          description: "Enable the setup of ReadOnlyRootFilesystem in the security contexts"
+        - kind: added
+          description: "Support basic chart installation on Openshift"
+        - kind: changed
+          description: "Include remaining Route settings"
+        - kind: changed
+          description: "Fix networkPolicy.additionalPolicys typo"
+        - kind: added
+          description: "Support install-plugin and prometheusExporter proxy variables in secret"
+        - kind: added
+          description: "Support GatewayAPI HttpRoute"
+        - kind: added
+          description: "Support additional labels in the PodMonitor"
+        - kind: added
+          description: "Support Openshift SCCv2 by default when Openshift.enabled=true"
+        - kind: changed
+          description: "Deprecate Openshift.createSCC"
+        - kind: added
+          description: "Support additional CA Certificate as ConfigMap instead of Secret only"
+        - kind: changed
+          description: "Changed default value for caCerts.image"
+        - kind: fixed
+          description: "Fix openshift change-admin-password-hook Job SecurityContext failure"
+        - kind: added
+          description: "Support SONAR_OPENSHIFT telemetry env_var"
+        - kind: changed
+          description: "Update helm chart repo path in sources"
+        - kind: changed
+          description: "Changed SONAR_OPENSHIFT to IS_HELM_OPENSHIFT_ENABLED"
+        - kind: changed
+          description: "Remove socketTimeout from jdbcOverwrite.jdbcUrl's default value"
+        - kind: changed
+          description: "Refactor Route to be subparameter of OpenShift"
+        - kind: changed
+          description: "Make OpenShift.createSCC false by default"
+        - kind: changed
+          description: "Deprecate peristence.volumes and persistence.mounts in favor or extraVolumes and extraVolumeMounts"
+        - kind: added
+          description: "Ensure kubernetes.io/version label is smaller than 63 chars"
+      artifacthub.io/containsSecurityUpdates: "false"
+      artifacthub.io/images: |
+        - name: sonarqube
+          image: sonarqube:10.7.0-community
+      artifacthub.io/links: |
+        - name: support
+          url: https://community.sonarsource.com/
+        - name: Chart Source
+          url: https://github.com/SonarSource/helm-chart-sonarqube/tree/master/charts/sonarqube
+      charts.openshift.io/name: sonarqube
+    apiVersion: v2
+    appVersion: 10.7.0
+    created: "2024-11-06T17:55:04.737759135+05:30"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 10.15.0
+    - condition: nginx.enabled,ingress-nginx.enabled
+      name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: 4.10.1
+    description: SonarQube is a self-managed, automatic code review tool that systematically
+      helps you deliver clean code. As a core element of our Sonar solution, SonarQube
+      integrates into your existing workflow and detects issues in your code to help
+      you perform continuous code inspections of your projects. The tool analyses
+      30+ different programming languages and integrates into your CI pipeline and
+      DevOps platform to ensure that your code meets high-quality standards.
+    digest: 6a08a444d82d2e301bec43e5208077d6b446e962cabf2e755df00604ff5ac692
+    home: https://www.sonarqube.org/
+    icon: https://raw.githubusercontent.com/SonarSource/sonarqube-static-resources/master/helm/SonarQubeLogo.svg
+    keywords:
+    - coverage
+    - security
+    - code
+    - quality
+    kubeVersion: '>= 1.24.0-0'
+    maintainers:
+    - email: leo.geoffroy+helm@sonarsource.com
+      name: leo-geoffroy-sonarsource
+    - email: carmine.vassallo@sonarsource.com
+      name: carminevassallo
+    - email: jeremy.cotineau@sonarsource.com
+      name: jCOTINEAU
+    - email: davi.koscianski-vidal@sonarsource.com
+      name: davividal
+    name: sonarqube
+    sources:
+    - https://github.com/SonarSource/helm-chart-sonarqube/tree/master/charts/sonarqube
+    - https://github.com/SonarSource/docker-sonarqube
+    - https://github.com/SonarSource/sonarqube
+    type: application
+    urls:
+    - https://dockercaptain.github.io/marketplace-helm/sonarqube-10.7.0+3598.tgz
+    version: 10.7.0+3598
+generated: "2024-11-06T17:55:04.6966682+05:30"
